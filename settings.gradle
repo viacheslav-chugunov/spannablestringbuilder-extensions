@@ -12,5 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "spannablestringbuilder-extensions"
+rootProject.name = "spannablestringbuilder.example"
 include ':app'
+include ':spannablestringbuilder-extensions'

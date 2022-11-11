@@ -1,6 +1,7 @@
-package viacheslav.chugunov.spannablestringbuilder_extensions
+package viacheslav.chugunov.spannablestringbuilder.extensions
 
 import android.content.Context
+import viacheslav.chugunov.spannablestringbuilder.scope.SpannableStringBuilderScope
 
 class TestSpannableStringBuilderScope(
     private val origin: SpannableStringBuilderScope
@@ -26,6 +27,6 @@ class TestSpannableStringBuilderScope(
     override fun colorRes(context: Context, colorRes: Int, provideText: () -> CharSequence): CharSequence =
         origin.colorRes(context, colorRes, provideText).also { builtLine += it }
 
-    override fun html(provideText: () -> CharSequence, startTag: String, endTag: String): CharSequence =
-        origin.html(provideText, startTag, endTag).also { builtLine += it }
+    override fun html(startTag: String, endTag: String, provideText: () -> CharSequence): CharSequence =
+        origin.html(startTag, endTag, provideText).also { builtLine += it }
 }

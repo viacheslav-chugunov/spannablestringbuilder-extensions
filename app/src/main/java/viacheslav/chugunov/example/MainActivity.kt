@@ -1,18 +1,10 @@
-package viacheslav.chugunov.spannablestringbuilder_extensions
+package viacheslav.chugunov.example
 
-import android.graphics.Color
 import android.os.Bundle
-import android.text.Html
 import android.text.SpannableStringBuilder
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import viacheslav.chugunov.spannablestringbuilder_extensions.databinding.ActivityMainBinding
+import viacheslav.chugunov.spannablestringbuilder.extensions.append
+import viacheslav.chugunov.spannablestringbuilder.example.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -33,13 +25,7 @@ class MainActivity : AppCompatActivity() {
             }
             .append("\n")
             .append {
-//                color("#db4437") {
-                    bold {
-//                        italic {
-                        "Formatted Test"
-//                        }
-                    }
-//                }
+                "Text 123"
             }
             .append("\nSimple Test")
         binding.exampleText.text = s
