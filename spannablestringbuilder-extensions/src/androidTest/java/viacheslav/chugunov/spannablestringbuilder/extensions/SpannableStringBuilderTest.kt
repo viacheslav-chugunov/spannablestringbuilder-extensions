@@ -128,6 +128,12 @@ class SpannableStringBuilderTest {
         builder = { html("</p>", "<p>") { "Paragraph" } }
     )
 
+    @Test
+    fun appendTwoTimesModifiedText() = testModifiedText(
+        expected = "<b><i>Bold italic</i></b>",
+        builder = { bold { italic { "Bold italic" } } }
+    )
+
     private fun testModifiedText(expected: String = "", builder: SpannableStringBuilderScope.() -> CharSequence) {
         val scope = newScope
         newBuilder.append(scope, builder)

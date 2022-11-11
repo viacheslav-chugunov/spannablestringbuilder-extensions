@@ -17,3 +17,5 @@ inline fun <T : SpannableStringBuilderScope> SpannableStringBuilder.append(
     val spannedText = Html.fromHtml(textString)
     return append(spannedText)
 }
+
+fun SpannableStringBuilder.newLine(): SpannableStringBuilder = append("\n")
