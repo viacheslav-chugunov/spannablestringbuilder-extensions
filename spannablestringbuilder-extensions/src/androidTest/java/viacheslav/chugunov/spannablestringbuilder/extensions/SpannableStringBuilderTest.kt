@@ -134,6 +134,13 @@ class SpannableStringBuilderTest {
         builder = { bold { italic { "Bold italic" } } }
     )
 
+    @Test
+    fun appendNewLine() {
+        val actual = newBuilder.append("Text").newLine().append("Text").toString()
+        val expected = "Text\nText"
+        Assert.assertEquals(expected, actual)
+    }
+
     private fun testModifiedText(expected: String = "", builder: SpannableStringBuilderScope.() -> CharSequence) {
         val scope = newScope
         newBuilder.append(scope, builder)
