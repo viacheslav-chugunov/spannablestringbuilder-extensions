@@ -3,8 +3,34 @@
 ## General
 The library adds a couple of methods that make it easy to create modifiable text: bold text; text with colored nested parts, and more.
 
-## Gradle
+## Preview
+```kotlin
+val textView = findViewById<TextView>(R.id.text_view)
+val spannableText = SpannableStringBuilder()
+    .append("This is an example with ")
+    .append { bold { "Bold Text" } }
+textView.text = spannableText
+```
 
+<p align="start">
+  <img src="https://github.com/viacheslav-chugunov/spannablestringbuilder-extensions/blob/main/assets/example_1.jpg" width="200" >
+</p>
+
+```kotlin
+val textView = findViewById<TextView>(R.id.text_view)
+val spannableText = SpannableStringBuilder()
+    .append("This is an example with ")
+    .append { bold { "bold text" } }
+    .append(" and ")
+    .append { colorHex("#CC0000") { italic { "red italic" } } }
+textView.text = spannableText
+```
+
+<p align="start">
+  <img src="https://github.com/viacheslav-chugunov/spannablestringbuilder-extensions/blob/main/assets/example_2.jpg" width="200" >
+</p>
+
+## Gradle
 Step 1. Add the JitPack repository to your build file. Add it in your root build.gradle at the end of repositories:
 ```gradle
 allprojects {
