@@ -5,6 +5,7 @@ import android.content.res.Resources.NotFoundException
 import android.graphics.Color
 import androidx.core.content.ContextCompat
 
+// Validation of passed arguments in SpannableStringBuilderScope.
 internal class SpannableStringBuilderScopeValidation {
 
     @Throws(IllegalColorHexException::class)

@@ -9,6 +9,10 @@ import viacheslav.chugunov.spannablestringbuilder.util.IllegalColorHexException
 import viacheslav.chugunov.spannablestringbuilder.util.IllegalHtmlTagsException
 import viacheslav.chugunov.spannablestringbuilder.util.SpannableStringBuilderScopeValidation
 
+/**
+ * Default implementation of SpannableStringBuilderScope.
+ * @see SpannableStringBuilderScope
+ * */
 class DefaultSpannableStringBuilderScope: SpannableStringBuilderScope {
     private val validation = SpannableStringBuilderScopeValidation()
 
