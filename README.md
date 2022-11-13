@@ -12,8 +12,8 @@ val spannableText = SpannableStringBuilder()
 textView.text = spannableText
 ```
 
-<p align="start">
-  <img src="https://github.com/viacheslav-chugunov/spannablestringbuilder-extensions/blob/main/assets/example_1.jpg" width="200" >
+<p align="center">
+  <img src="https://github.com/viacheslav-chugunov/spannablestringbuilder-extensions/blob/main/assets/example_1.png" >
 </p>
 
 ```kotlin
@@ -26,8 +26,8 @@ val spannableText = SpannableStringBuilder()
 textView.text = spannableText
 ```
 
-<p align="start">
-  <img src="https://github.com/viacheslav-chugunov/spannablestringbuilder-extensions/blob/main/assets/example_2.jpg" width="200" >
+<p align="center">
+  <img src="https://github.com/viacheslav-chugunov/spannablestringbuilder-extensions/blob/main/assets/example_2.png" >
 </p>
 
 ## Gradle
