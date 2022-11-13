@@ -17,10 +17,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val spannableText = SpannableStringBuilder()
-            .append("This is an example with ")
-            .append { bold { "bold text" } }
-            .append(" and ")
-            .append { colorHex("#CC0000") { italic { "red italic" } } }
+            .append { "Simple" }
+            .newLine().newLine()
+            .append { bold { "Bold" } }
+            .newLine().newLine()
+            .append { bold { underline { "Bold Underline" } } }
+            .newLine().newLine()
+            .append { italic { colorRes(this@MainActivity, R.color.red) { "Red Italic" } } }
+            .newLine().newLine()
+            .append { html("<h1>", "</h1>") { "Header" } }
         binding.exampleText.text = spannableText
     }
 }
