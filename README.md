@@ -30,6 +30,43 @@ textView.text = spannableText
   <img src="https://github.com/viacheslav-chugunov/spannablestringbuilder-extensions/blob/main/assets/example_2.png" >
 </p>
 
+## Gradle
+Step 1. Add the JitPack repository to your build file. Add it in your root build.gradle at the end of repositories:
+```gradle
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Step 2. Add the dependency
+```gradle
+dependencies {
+    implementation 'com.github.viacheslav-chugunov:spannablestringbuilder-extensions:1.0.2'
+}
+```
+
+## Maven
+Step 1. Add the JitPack repository to your build file
+```maven
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+Step 2. Add the dependency
+```maven
+<dependency>
+    <groupId>com.github.viacheslav-chugunov</groupId>
+    <artifactId>spannablestringbuilder-extensions</artifactId>
+    <version>1.0.2</version>
+</dependency>
+```
+
 ## Usage
 ### SpannableStringBuilder extensions
 ```kotlin
@@ -71,41 +108,4 @@ fun colorRes(context: Context, @ColorRes colorRes: Int, provideText: () -> CharS
 
 // Wraps text in html tags
 fun html(startTag: String, endTag: String, provideText: () -> CharSequence): CharSequence
-```
-
-## Gradle
-Step 1. Add the JitPack repository to your build file. Add it in your root build.gradle at the end of repositories:
-```gradle
-allprojects {
-    repositories {
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-
-Step 2. Add the dependency
-```gradle
-dependencies {
-    implementation 'com.github.viacheslav-chugunov:spannablestringbuilder-extensions:1.0.2'
-}
-```
-
-## Maven
-Step 1. Add the JitPack repository to your build file
-```maven
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-```
-
-Step 2. Add the dependency
-```maven
-<dependency>
-    <groupId>com.github.viacheslav-chugunov</groupId>
-    <artifactId>spannablestringbuilder-extensions</artifactId>
-    <version>1.0.2</version>
-</dependency>
 ```
