@@ -30,6 +30,49 @@ textView.text = spannableText
   <img src="https://github.com/viacheslav-chugunov/spannablestringbuilder-extensions/blob/main/assets/example_2.png" >
 </p>
 
+## Usage
+### SpannableStringBuilder extensions
+```kotlin
+// Appends bold text
+fun SpannableStringBuilder.appendBold(text: CharSequence): SpannableStringBuilder
+
+// Appends italic text
+fun SpannableStringBuilder.appendItalic(text: CharSequence): SpannableStringBuilder
+
+// Appends underlined text
+fun SpannableStringBuilder.appendUnderline(text: CharSequence): SpannableStringBuilder
+
+// Appends painted text
+fun SpannableStringBuilder.appendColorHex(colorHex: String, text: CharSequence): SpannableStringBuilder
+fun SpannableStringBuilder.appendColorInt(@ColorInt colorInt: Int, text: CharSequence): SpannableStringBuilder
+fun SpannableStringBuilder.appendColorRes(context: Context, @ColorRes colorRes: Int, text: CharSequence): SpannableStringBuilder
+
+// Appends html text
+fun SpannableStringBuilder.appendHtml(startTag: String, text: CharSequence, endTag: String): SpannableStringBuilder
+
+// Builder to append text, modified two or more times
+fun SpannableStringBuilder.append(builder: SpannableStringBuilderScope.() -> CharSequence): SpannableStringBuilder
+```
+### SpannableStringBuilderScope
+```kotlin
+// Makes wrapped text bold
+fun bold(provideText: () -> CharSequence): CharSequence
+
+// Makes wrapped text italic
+fun italic(provideText: () -> CharSequence): CharSequence
+
+// Makes wrapped text underlined
+fun underline(provideText: () -> CharSequence): CharSequence
+
+// Paints wrapped text
+fun colorHex(colorHex: String, provideText: () -> CharSequence): CharSequence
+fun colorInt(@ColorInt colorInt: Int, provideText: () -> CharSequence): CharSequence
+fun colorRes(context: Context, @ColorRes colorRes: Int, provideText: () -> CharSequence): CharSequence
+
+// Wraps text in html tags
+fun html(startTag: String, endTag: String, provideText: () -> CharSequence): CharSequence
+```
+
 ## Gradle
 Step 1. Add the JitPack repository to your build file. Add it in your root build.gradle at the end of repositories:
 ```gradle
