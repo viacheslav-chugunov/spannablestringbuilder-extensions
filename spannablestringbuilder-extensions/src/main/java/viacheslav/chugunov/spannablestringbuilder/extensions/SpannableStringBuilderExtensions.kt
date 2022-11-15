@@ -5,6 +5,8 @@ import android.content.res.Resources.NotFoundException
 import android.text.Html
 import android.text.Spannable
 import android.text.SpannableStringBuilder
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
 import viacheslav.chugunov.spannablestringbuilder.scope.DefaultSpannableStringBuilderScope
 import viacheslav.chugunov.spannablestringbuilder.scope.SpannableStringBuilderScope
 import viacheslav.chugunov.spannablestringbuilder.util.IllegalColorHexException
@@ -62,7 +64,7 @@ fun SpannableStringBuilder.appendColorHex(colorHex: String, text: CharSequence):
  * @param text text that should be modified.
  * @return builder with added painted text.
  * */
-fun SpannableStringBuilder.appendColorInt(colorInt: Int, text: CharSequence): SpannableStringBuilder =
+fun SpannableStringBuilder.appendColorInt(@ColorInt colorInt: Int, text: CharSequence): SpannableStringBuilder =
     append { colorInt(colorInt) { text } }
 
 /**
@@ -73,7 +75,7 @@ fun SpannableStringBuilder.appendColorInt(colorInt: Int, text: CharSequence): Sp
  * @throws NotFoundException if the color resource is invalid.
  * @return builder with added painted text.
  * */
-fun SpannableStringBuilder.appendColorRes(context: Context, colorRes: Int, text: CharSequence): SpannableStringBuilder =
+fun SpannableStringBuilder.appendColorRes(context: Context, @ColorRes colorRes: Int, text: CharSequence): SpannableStringBuilder =
     append { colorRes(context, colorRes) { text } }
 /**
  * Appends text, modified by html tags.
@@ -83,7 +85,7 @@ fun SpannableStringBuilder.appendColorRes(context: Context, colorRes: Int, text:
  * @throws IllegalHtmlTagsException if the tags are in the wrong format.
  * @return builder with added html text.
  * */
-fun SpannableStringBuilder.appendHtml(startTag: String, text: CharSequence, endTag: String,): SpannableStringBuilder =
+fun SpannableStringBuilder.appendHtml(startTag: String, text: CharSequence, endTag: String): SpannableStringBuilder =
     append { html(startTag, endTag) { text } }
 
 /**
