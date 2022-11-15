@@ -2,8 +2,6 @@
 
 ## General
 The library adds a couple of methods that make it easy to create modifiable text: bold text; text with colored nested parts, and more.
-
-## Preview
 ```kotlin
 val textView = findViewById<TextView>(R.id.text_view)
 val spannableText = SpannableStringBuilder()
@@ -30,7 +28,10 @@ textView.text = spannableText
   <img src="https://github.com/viacheslav-chugunov/spannablestringbuilder-extensions/blob/main/assets/example_2.png" >
 </p>
 
-## Gradle
+## How to get a library into your build
+
+### Gradle
+
 Step 1. Add the JitPack repository to your build file. Add it in your root build.gradle at the end of repositories:
 ```gradle
 allprojects {
@@ -39,7 +40,6 @@ allprojects {
     }
 }
 ```
-
 Step 2. Add the dependency
 ```gradle
 dependencies {
@@ -47,7 +47,8 @@ dependencies {
 }
 ```
 
-## Maven
+### Maven
+
 Step 1. Add the JitPack repository to your build file
 ```maven
 <repositories>
@@ -68,7 +69,9 @@ Step 2. Add the dependency
 ```
 
 ## Usage
+
 ### SpannableStringBuilder extensions
+
 ```kotlin
 // Appends bold text
 fun SpannableStringBuilder.appendBold(text: CharSequence): SpannableStringBuilder
@@ -94,7 +97,9 @@ fun SpannableStringBuilder.newLine(): SpannableStringBuilder
 fun SpannableStringBuilder.append(builder: SpannableStringBuilderScope.() -> CharSequence): SpannableStringBuilder
 fun <T : SpannableStringBuilderScope> SpannableStringBuilder.append(scope: T, builder: T.() -> CharSequence): SpannableStringBuilder
 ```
+
 ### SpannableStringBuilderScope
+
 ```kotlin
 // Makes wrapped text bold
 fun bold(provideText: () -> CharSequence): CharSequence
