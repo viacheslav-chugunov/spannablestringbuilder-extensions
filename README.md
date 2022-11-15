@@ -87,8 +87,12 @@ fun SpannableStringBuilder.appendColorRes(context: Context, @ColorRes colorRes: 
 // Appends html text
 fun SpannableStringBuilder.appendHtml(startTag: String, text: CharSequence, endTag: String): SpannableStringBuilder
 
+// Appends "\n" to the end of a line
+fun SpannableStringBuilder.newLine(): SpannableStringBuilder
+
 // Builder to append text, modified two or more times
 fun SpannableStringBuilder.append(builder: SpannableStringBuilderScope.() -> CharSequence): SpannableStringBuilder
+fun <T : SpannableStringBuilderScope> SpannableStringBuilder.append(scope: T, builder: T.() -> CharSequence): SpannableStringBuilder
 ```
 ### SpannableStringBuilderScope
 ```kotlin
