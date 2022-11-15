@@ -8,7 +8,7 @@ The library adds a couple of methods that make it easy to create modifiable text
 val textView = findViewById<TextView>(R.id.text_view)
 val spannableText = SpannableStringBuilder()
     .append("This is an example with ")
-    .append { bold { "Bold Text" } }
+    .appendBold("Bold Text")
 textView.text = spannableText
 ```
 
@@ -20,7 +20,7 @@ textView.text = spannableText
 val textView = findViewById<TextView>(R.id.text_view)
 val spannableText = SpannableStringBuilder()
     .append("This is an example with ")
-    .append { bold { "bold text" } }
+    .appendBold("Bold Text")
     .append(" and ")
     .append { colorHex("#CC0000") { italic { "red italic" } } }
 textView.text = spannableText
@@ -43,7 +43,7 @@ allprojects {
 Step 2. Add the dependency
 ```gradle
 dependencies {
-    implementation 'com.github.viacheslav-chugunov:spannablestringbuilder-extensions:1.0.1'
+    implementation 'com.github.viacheslav-chugunov:spannablestringbuilder-extensions:1.0.2'
 }
 ```
 
@@ -63,6 +63,6 @@ Step 2. Add the dependency
 <dependency>
     <groupId>com.github.viacheslav-chugunov</groupId>
     <artifactId>spannablestringbuilder-extensions</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
