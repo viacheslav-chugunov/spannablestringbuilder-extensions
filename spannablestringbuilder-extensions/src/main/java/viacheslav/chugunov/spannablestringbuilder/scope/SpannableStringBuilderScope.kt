@@ -14,7 +14,7 @@ interface SpannableStringBuilderScope {
     /**
      * Makes wrapped text bold.
      * @param provideText function that should return the text to wrap.
-     * @return bolt text.
+     * @return bold text.
      * */
     fun bold(provideText: () -> CharSequence): CharSequence
 

@@ -2,7 +2,6 @@ package viacheslav.chugunov.example
 
 import android.os.Bundle
 import android.text.SpannableStringBuilder
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import viacheslav.chugunov.spannablestringbuilder.example.R
 import viacheslav.chugunov.spannablestringbuilder.extensions.append
