@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import viacheslav.chugunov.spannablestringbuilder.example.R
 import viacheslav.chugunov.spannablestringbuilder.extensions.append
 import viacheslav.chugunov.spannablestringbuilder.example.databinding.ActivityMainBinding
+import viacheslav.chugunov.spannablestringbuilder.extensions.appendBold
+import viacheslav.chugunov.spannablestringbuilder.extensions.appendHtml
 import viacheslav.chugunov.spannablestringbuilder.extensions.newLine
 
 class MainActivity : AppCompatActivity() {
@@ -18,13 +20,13 @@ class MainActivity : AppCompatActivity() {
         val spannableText = SpannableStringBuilder()
             .append { "Simple" }
             .newLine().newLine()
-            .append { bold { "Bold" } }
+            .appendBold("Bold")
             .newLine().newLine()
             .append { bold { underline { "Bold Underline" } } }
             .newLine().newLine()
             .append { italic { colorRes(this@MainActivity, R.color.red) { "Red Italic" } } }
             .newLine().newLine()
-            .append { html("<h1>", "</h1>") { "Header" } }
+            .appendHtml("<h1>", "Header", "</h1>")
         binding.exampleText.text = spannableText
     }
 }
