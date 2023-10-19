@@ -6,7 +6,7 @@ The library adds a couple of methods that make it easy to create modifiable text
 val textView = findViewById<TextView>(R.id.text_view)
 val spannableText = SpannableStringBuilder()
     .append("This is an example with ")
-    .appendBold("Bold Text")
+    .appendBold("bold Text")
 textView.text = spannableText
 ```
 
@@ -18,7 +18,7 @@ textView.text = spannableText
 val textView = findViewById<TextView>(R.id.text_view)
 val spannableText = SpannableStringBuilder()
     .append("This is an example with ")
-    .appendBold("Bold Text")
+    .appendBold("bold Text")
     .append(" and ")
     .append { colorHex("#CC0000") { italic { "red italic" } } }
 textView.text = spannableText
